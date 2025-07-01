@@ -46,6 +46,8 @@ body {
     border-radius: var(--radius);
     flex: 0 0 var(--option-width);
     transition: flex-grow 1.25s cubic-bezier(.17, .84, .44, 1);
+    background-position: center;
+    background-size: cover;
 }
 
 .option:not(.active) {
@@ -54,5 +56,13 @@ body {
 
 .option.active {
     flex-grow: var(--total-options);
+}
+
+@media (max-width: 768px) {
+    .options {
+        flex-direction: column;
+        min-height: 100vh;
+        min-width: auto;
+    }
 }
 
