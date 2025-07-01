@@ -34,11 +34,25 @@ body {
     display: flex;
     flex-direction: row;
     min-width: 480px;
+    max-width: calc(var(--total-options) * 130px);
     height: var(--option-height);
+    width: 100%;
 }
 
 .option {
-    background-color: #000;
+    background-color: color-mix(in srgb, var(--bg), CanvasText 10%);
     margin: var(--gutter);
     flex-grow: 1;
+    border-radius: var(--radius);
+    flex: 0 0 var(--option-width);
+    transition: flex-grow 1.25s cubic-bezier(.17, .84, .44, 1);
 }
+
+.option:not(.active) {
+    cursor: pointer;
+}
+
+.option.active {
+    flex-grow: var(--total-options);
+}
+
