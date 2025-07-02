@@ -18,3 +18,5 @@ const initOptions = () => {
 }
 
 document.addEventListener('DOMContentLoaded', initOptions)
+
+
